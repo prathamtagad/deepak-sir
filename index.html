@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b14">
+  <meta name="description" content="A beautiful, animated login experience.">
+  <title>Welcome Back — AURORA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+    <div class="grid"></div>
+    <div class="noise"></div>
+  </div>
+  <main class="page-shell">
+    <section class="login-card" aria-labelledby="page-title">
+      <div class="card-glow"></div>
+      <div class="brand-row">
+        <a class="brand" href="#" aria-label="Aurora home">
+          <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+          <span>AURORA</span>
+        </a>
+        <span class="secure-label"><span class="secure-dot"></span> SECURE SIGN IN</span>
+      </div>
+      <div class="intro">
+        <div class="welcome-chip"><span class="sparkle">✦</span> YOUR SPACE AWAITS</div>
+        <h1 id="page-title">Welcome<br><span>back.</span></h1>
+        <p>Good to see you again. Enter your details to pick up where you left off.</p>
+      </div>
+      <form id="login-form" novalidate>
+        <div class="field-group">
+          <label for="email">Email address</label>
+          <div class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="m5 7 7 5.5L19 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <span class="input-check" aria-hidden="true">✓</span>
+          </div>
+          <span class="field-error" id="email-error" aria-live="polite"></span>
+        </div>
+        <div class="field-group">
+          <div class="label-row">
+            <label for="password">Password</label>
+            <a class="text-link" href="#" id="forgot-link">Forgot password?</a>
+          </div>
+          <div class="input-wrap">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required minlength="6">
+            <button class="password-toggle" id="password-toggle" type="button" aria-label="Show password" aria-pressed="false">
+              <svg class="eye-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" stroke="currentColor" stroke-width="1.6"/></svg>
+              <svg class="eye-closed" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 3 18 18M10.6 6.2A10.5 10.5 0 0 1 12 6c6.1 0 9.5 6 9.5 6a15 15 0 0 1-3.1 3.7M6.2 6.3C3.8 8 2.5 12 2.5 12s3.4 6 9.5 6c1.3 0 2.5-.3 3.5-.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <span class="field-error" id="password-error" aria-live="polite"></span>
+        </div>
+        <div class="form-options">
+          <label class="remember-control" for="remember">
+            <input id="remember" name="remember" type="checkbox">
+            <span class="custom-checkbox"><svg viewBox="0 0 12 10" fill="none" aria-hidden="true"><path d="m1 5 3.2 3L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>Remember me</span>
+          </label>
+          <span class="session-note"><span></span> Private session</span>
+        </div>
+        <button class="submit-button" id="submit-button" type="submit">
+          <span class="button-text">Sign in</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+          <span class="button-spinner" aria-hidden="true"></span>
+        </button>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      </form>
+      <div class="divider"><span></span><small>NEW AROUND HERE?</small><span></span></div>
+      <p class="signup-line">Don't have an account? <a href="#" id="signup-link">Create one <span>↗</span></a></p>
+      <div class="card-footer"><span>© 2026 AURORA STUDIO</span><span>MADE FOR WHAT'S NEXT <b>✳</b></span></div>
+    </section>
+    <div class="floating-note note-top"><span class="note-icon">✧</span><span>Make room for<br><b>brilliant things.</b></span></div>
+    <div class="floating-note note-bottom"><span class="pulse-ring"><span></span></span><span>All systems<br><b>feeling good</b></span></div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon">✓</span><span id="toast-text">You're all set.</span></div>
+</body>
+</html>
